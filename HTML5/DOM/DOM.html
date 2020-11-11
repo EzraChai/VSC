@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function(){
+            let btn = document.getElementById("getValue")
+            btn.onclick = function(){
+                let value = document.getElementById("text")
+                username = value.value
+                alert("Hi, "+username)
+            }
+
+
+        }
+    </script>
+
+    <input type="text" id="text">
+    <input type="button" value="Get Text Value" id="getValue">
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="http://localhost:5500/register" method="POST">
+        <input type="hidden" name="userid" value="Chloe">
+        Username
+        <input type="text" name= "username"/>
+        <br>
+        Password
+        <input type="password" name = "password"/>
+        <br>
+        Confirm Password
+        <input type="password">
+        <br>
+        Gender
+        <input type="radio" name="gender" value="0" checked/> Boy
+        <input type="radio" name="gender" value="1" /> Girl
+        <br>
+        Hobby
+        <input type="checkbox" name="interest" value="Singing">Singing
+        <input type="checkbox" name="interest" value="Dancing">Dancing
+        <input type="checkbox" name="interest" value="Rapping">Rapping
+        <br>
+        Education
+        <select name="grade" id="grade">
+            <option value="University">University</option>
+            <option value="College">College</option>
+            <option value="High_School">High School</option>
+            <option value="Secondary_School" selected>Secondary School</option>
+            <option value="Primary_School">Primary School</option>
+            <option value="Kindergaten">Kindergaten</option>
+        </select>
+        <br>
+        Resume <br>
+        <textarea name="Resume" id="resume" cols="60" rows="10"></textarea>
+        <br>
+        Picture
+        <input type="file">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+
+    </form>
+</body>
+</html> 
+
+<!--
+    http://localhost:5500/register?username=Chai+Juan+Zhe&password=auxYrpisBmsfW2f&gender=0&interest=Singing&grade=Secondary_School&Resume=Hi+my+name+is+Chai+Juan+Zhe
+-->

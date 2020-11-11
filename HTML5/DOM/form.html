@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            let flagUsername = null
+            let flagEmail = null
+           let password = null
+
+            document.getElementById("username").onblur = function(){
+                let username = document.getElementById("username").value
+                let usernameRegExp = /^(?=.{6,14}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/
+                flagUsername = usernameRegExp.test(username)
+                run()
+                if (!flagUsername){
+                document.getElementById("usernameerror").innerText = "Please use only letter[a-z],number and period within 6 to 14 words only."
+                }
+            }
+            document.getElementById("username").onfocus = function(){
+                document.getElementById("usernameerror").innerText =  ""
+            }
+
+            document.getElementById("email").onblur = function(){
+                let email = document.getElementById("email").value
+                let emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                flagEmail = emailRegExp.test(email)
+                run()
+                if (!flagEmail){
+                document.getElementById("emailerror").innerText = "Please enter a valid email."
+                }
+            }
+            document.getElementById("email").onfocus = function(){
+                document.getElementById("emailerror").innerText =  ""
+            }
+            document.getElementById("confirmPassword").onblur = function(){
+                password = document.getElementById("password").value
+                run()
+                if (password != document.getElementById("confirmPassword").value){
+                    document.getElementById("passworderror").innerText = "Password must be same."
+                }
+            }
+            document.getElementById("confirmPassword").onfocus = function(){
+                document.getElementById("passworderror").innerText =  ""
+            }
+
+
+            function run(){
+                if(flagUsername && flagEmail && document.getElementById("confirmPassword").value > 0){
+                    document.getElementById("submit").disabled = false
+                }else{
+                    document.getElementById("submit").disabled = true
+                }
+            }
+            
+        }
+    </script>
+
+    <form action="" method="POST">
+
+        Username
+        <br>
+        <input type="text" id="username">
+        <span id="usernameerror" style="color:red; font:12px" ></span>
+        <br>
+        Email
+        <br>
+        <input type="text" id="email">
+        <span id="emailerror" style="color:red; font:12px" ></span>
+        <br>
+        Password
+        <br>
+        <input type="password" id="password">
+        <br>
+        Confirm Password
+        <br>
+        <input type="password" id="confirmPassword">
+        <span id="passworderror" style="color:red; font:12px" ></span>
+        <br>
+        <input type="submit" name="Submit" id="submit" disabled>
+        
+    </form>
+</body>
+</html>

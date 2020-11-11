@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UsernameTest</title>
+</head>
+<body>
+    <script>
+
+        //低版本IE不支持trim()
+        /*
+        window.onload = function(){
+            document.getElementById("enter").onclick = function(){
+                let username = document.getElementById("username").value
+                username = username.trim()
+
+                alert("-->"+username+"<--")
+            }
+        }
+        */
+
+        //重写trim()让低版本IE也能运行
+        String.prototype.trim = function(){
+            return this.replace(/^\s+/,"").replace(/\s+$/,"")
+        }
+        window.onload = function(){
+            document.getElementById("enter").onclick = function(){
+                let username = document.getElementById("username").value
+                username = username.trim()
+
+                alert("-->"+username+"<--")
+            }
+        }
+
+
+
+    </script>
+    <input type="text" id="username">
+    <input type="button" value="Enter" id="enter">
+</body>
+</html>

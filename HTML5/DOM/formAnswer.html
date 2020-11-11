@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Answer</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            let usernameerror = document.getElementById("usernameerror")
+            let username = document.getElementById("username")
+            username.onblur = function(){
+                let usernameValue = username.value
+                usernameValue = usernameValue.trim()
+                if(usernameValue == ""){
+                    usernameerror.innerText = "Username cannot be null."
+                }else{
+                    if(usernameValue.length < 6 ||  usernameValue.length > 14){
+                        usernameerror.innerText = "Username word count must be between [6 - 14] words only."
+                    }else{
+                        let regExp = /^[A-Za-z0-9]+$/  
+                        let flag = regExp.test(usernameValue)  
+                        if (!flag){
+                            usernameerror.innerText = "Username must form only by a-z,A-Z and 0-9"
+                        }else{
+                             
+                        }
+                    }
+                }
+            }
+
+            username.onfocus = function(){
+                if(usernameerror.innerText != ""){
+                    username.value = ""
+                }
+                usernameerror.innerText = ""
+            }
+
+            let passworderror = document.getElementById("passworderror")
+
+            let checkPassword = document.getElementById("checkPassword")
+            let userpassword = document.getElementById("password")
+            
+
+            checkPassword.onblur = function(){
+                if(userpassword.value == ""){
+                    passworderror.innerText = "Password cannot be null"
+                }else if ( userpassword.value != checkPassword.value){
+                    passworderror.innerText = "Password not match"
+                }
+            }
+
+            checkPassword.onfocus = function(){
+                if(passworderror.innerText != ""){
+                    checkPassword.value = ""
+                }
+                passworderror.innerText = ""
+            }
+
+            let email = document.getElementById("email")
+            let errorEmail = document.getElementById("emailerror") 
+            email.onblur = function(){
+                emailVal = email.value
+                let emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                let flag = emailRegExp.test(emailVal)
+                if (flag){
+
+                }else{
+                    errorEmail.innerText = "Email unvalid."
+                }
+            }
+
+            email.onfocus = function(){
+                if (errorEmail.innerText != ""){
+                    email.value = ""
+                }
+                errorEmail.innerText = ""
+            }
+
+            let submitBtn = document.getElementById("submitBtn")
+            submitBtn.onclick = function(){
+
+                username.focus()
+                username.blur()
+
+                checkPassword.focus()
+                checkPassword.blur()
+
+                email.focus()
+                email.blur()
+
+                if(usernameerror.innerText == "" && passworderror.innerText == "" && errorEmail.innerText == ""){
+                    let submitForm = document.getElementById("Form")
+                    submitForm.submit()
+                }
+            }
+        }
+
+    </script>
+
+    <form id="Form" action="http://127.0.0.1:5500/DOM/Uername.html" method="post"> 
+        <input type="text" name="username" id="username" placeholder="Username">
+        <span id="usernameerror" style="color:red; font:12px" ></span>
+        <br>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <br>
+        <input type="password" id="checkPassword" placeholder="Check Password">
+        <span id="passworderror" style="color:red; font:12px" ></span>
+        <br>
+        <input type="text" id="email" placeholder="Email">
+        <span id="emailerror" style="color:red; font:12px" ></span>
+         <br>
+         <input type="button" value="Submit" id="submitBtn">
+         <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

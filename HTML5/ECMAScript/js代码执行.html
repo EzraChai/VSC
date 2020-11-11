@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 代码执行循序</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        alert("Hello World")
+        window.onload = function(){
+            document.getElementById("btn2").onclick = function(){
+                alert("Hello")
+            }
+
+            document.getElementById("textBoxButton").onclick = function(){
+                let text = document.getElementById("text")
+                if (text.type == "text"){
+                    text.type = "checkbox"
+                }else{
+                    text.type = "text"
+                }
+            }
+        }
+
+    </script>
+
+    <input type="button" value="Button" id="btn2">
+    <br>
+    <br>
+    <br>
+    <input type="text" id="text">
+    <input type="button" value="Change the box " id="textBoxButton">
+
+    
+</body>
+</html>
