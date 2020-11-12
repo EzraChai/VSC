@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+
+        function selectAll(){
+            //获得第一个·Checkbox 的选中状态
+            let flag = $("#selectAll").prop("checked")
+
+            //为所有数据行checkbox的选中状态设置
+            $(".Hobby").prop("checked",flag)
+            
+
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    Hobby <br>
+    <input type="checkbox" onclick="selectAll()" id="selectAll" >Select All<br>
+    <input type="checkbox" class="Hobby" >Eat<br>
+    <input type="checkbox" class="Hobby" >Sleep<br>
+    <input type="checkbox" class="Hobby" >Play<br>
+
+</body>
+</html>

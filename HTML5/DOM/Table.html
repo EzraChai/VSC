@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <script>
+        let data = {
+            "total" : 4,
+            "emps": [
+                {"empno":7359,"ename":"SMITH","sal":800},
+                {"empno":7360,"ename":"ADAM","sal":2100},
+                {"empno":7361,"ename":"ALAN","sal":1100},
+                {"empno":7362,"ename":"KYLAN","sal":1000},
+                {"empno":7363,"ename":"EZRA","sal":10000}
+            ]
+        }
+
+        window.onload = function(){
+            let display_button = document.getElementById("showData")
+            display_button.onclick = function(){
+                let emps = data.emps
+                let html = ""
+                for(let i = 0; i < emps.length ; i++){
+                   let emp = emps[i]
+                   html += "<tr>"
+                   html += "<td>"+emp.empno+"</td>"    
+                   html += "<td>"+emp.ename+"</td>"  
+                   html += "<td>"+emp.sal+"</td>"  
+                   html += "</tr>"
+                }
+                document.getElementById("body").innerHTML = html
+
+                let totalData = document.getElementById("total")
+                count = emps.length
+                totalData.innerText = count
+            }
+        }
+ 
+    </script>
+    <input type="button" value="Show Data" id="showData"">
+    Employee's Data
+    <table border="1px" width="50%">
+        <tr>
+            <th>Employee's ID</th>
+            <th>Employee's Name</th>
+            <th>Employee's Salary</th>
+        </tr>
+        <tbody id="body">
+           <tr>
+            <td></td>
+        </tr> 
+        </tbody>
+        
+    </table>
+    Total Of <span id="total">0</span> Data
+</body>
+</html>
