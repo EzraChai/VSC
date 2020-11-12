@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+</head>
+<body>
+    <script>
+        let timeNow = new Date()
+        document.write(timeNow)
+        document.write("<br>")
+
+        let local = timeNow.toLocaleString()
+        document.write(local)
+        document.write("<br>")
+
+        let t = new Date()
+        let year = t.getFullYear()
+        let month = t.getMonth()
+        let dayOfWeek = t.getDay()
+        let day = t.getDate()
+        document.write(day + " / " + (month+1) + " / " + year )
+        document.write("<br>")
+        document.write("<br>")
+
+        let milliseconds = t.getTime()
+        document.write(milliseconds)
+
+        function displayTime(){
+            let time = new Date()
+            let timeNow = time.toLocaleTimeString()
+            document.getElementById("TimeDev").innerText = timeNow
+        }
+        function start(){
+            v = window.setInterval(displayTime,"1000")
+        }
+
+        function stop(){
+            window.clearInterval(v)
+            document.getElementById("TimeDev").innerText = ""
+        }
+    </script>
+    <br>
+    <br>
+    <br>
+    <input type="button" value="DisplayTime" onclick="start()">
+    <input type="button" value="Timer Stop" onclick="stop()">
+    <div id="TimeDev"></div>
+</body>
+</html>

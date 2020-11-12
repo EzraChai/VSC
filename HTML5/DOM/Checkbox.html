@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+</head>
+<body>
+    <script>
+        /* window.onload = function(){
+            let selectAll = document.getElementById("selectAll")
+            selectAll.onclick = function(){
+                let list = document.getElementsByName("Hobby")
+                if(selectAll.checked){
+                    for(let i = 0 ; i < list.length ; i++){
+                        list[i].checked = true
+                    }
+                }else{
+                    for(let i = 0 ; i < list.length ; i++){
+                        list[i].checked = false
+                    }   
+                }
+            }
+        } 
+        */
+        window.onload = function(){
+            let selectAll = document.getElementById("selectAll")
+            let list = document.getElementsByName("Hobby")
+            selectAll.onclick = function(){
+                for(let i = 0 ; i < list.length ; i++){
+                    list[i].checked = selectAll.checked
+                }
+            }
+
+            let all = list.length   
+            for(let i = 0 ; i < list.length ; i++){
+                list[i].onclick = function(){
+                    let checkCount = 0
+                    for(let i = 0; i < list.length; i++){
+                        if(list[i].checked){
+                            checkCount++
+                        } 
+                    }
+                    selectAll.checked = (all == checkCount)
+                    //checkCount == all ? selectAll.checked = true : selectAll.checked = false
+                    /*
+                    if (all == checkCount){
+                        selectAll.checked = true
+                    }else{
+                        selectAll.checked = false
+                    }
+                    */
+                }
+            }
+        } 
+
+    </script>
+
+    <input type="checkbox" id="selectAll" >Select All <br>
+    <input type="checkbox" name="Hobby" value="Singing" id="singing">Singing<br>
+    <input type="checkbox" name="Hobby" value="Dancing" id="dancing">Dancing<br>
+    <input type="checkbox" name="Hobby" value="Rapping" id="rapping">Rapping<br>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLose</title>
+</head>
+<body>
+    <script>
+        function confirmation(){
+            //let flag = window.confirm("Are you sure you to close")
+
+            //if(flag){
+            //    window.close()
+            //}
+
+            if(window.confirm("Are you sure you to close")){
+                window.close() 
+            }
+        }
+
+    </script>
+    <input type="button" value="Close current window" onclick="window.close()">
+    <br>
+    <br>
+    <input type="button" value="Confirm to close" onclick="confirmation()" >
+</body>
+</html>

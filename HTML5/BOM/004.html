@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window</title>
+</head>
+<body>
+    <script>
+        function windowTop(){
+            if(window.top != window.self){
+                window.top.location = window.self.location
+            }
+        }
+
+    </script>
+    <input type="button" value="Top Window"  onclick="windowTop()">
+    <input type="button" value="Back" >
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            let user = {
+                "usercode" : 110,
+                "username" : "Chloe",
+                "sex" : true,
+                "address" : {
+                    "city" : "Port Dickson",
+                    "address" : "1027, Jalan DS 3/3,Port Dickson, Negeri Sembilan",
+                    "postcode" : "71010"
+                },
+                "hooby" : ["read books","watch drama series","jogging"]
+            }
+
+            alert(user.username + " lives in "+user.address.city)
+
+            let students = {
+                "total": 3,
+                "StudentsInfo" : [
+                    {"name" : "Chai Juan Zhe","birth" : "25-02-2005"},
+                    {"name" : "Chloe Gan","birth" : "20-09-2005"},
+                    {"name" : "Yuventhiran a/l Ramesh","birth" : "05-11-2005"}
+                ]
+            }
+            
+            document.write(students.total + "<br>")
+            let info = students.StudentsInfo
+            for(let  i = 0 ; i < info.length; i ++){
+                document.write("Name : "+info[i].name + " , Birth : " + info[i].birth + "<br>")
+
+            }
+        }
+       
+
+
+    </script>
+</body>
+</html>
