@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>004</title>
+    <script src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+        function fun1(){
+            $(":button:lt(3)").bind("click",dealFun)
+        }
+        
+        function dealFun(){
+            alert($(this).val())
+        }
+
+        function fun2(){
+            $(":button:lt(2)").unbind("click")
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="我是大哥">
+    <input type="button" value="我是二哥">
+    <input type="button" value="我是三哥">
+    <br>
+    <br>
+    <input type="button" value="为前三个button绑定onclick" onclick="fun1()">
+    <input type="button" value="为前三个button解除绑定onclick" onclick="fun2()">
+
+</body>
+</html>

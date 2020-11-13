@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>003</title>
+    <script src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+        function fun1(){
+            $(":text:enabled").val("可用文本框")
+        }
+        function fun2(){
+            $(":text:disabled").val("不可用文本框")
+        }
+        function fun3(){
+            $(":checkbox:checked").each(function(index,domObj){
+                alert("第"+(index+1)+"被选中的checkbox的value " + $(domObj).val())
+            })
+        }
+        
+        function fun4(){
+            //alert($("#city>option:selected").val())
+            alert($("#city").val())
+        }
+
+    </script>
+</head>
+<body>
+    文本01：<input type="text" value="value01"><br>
+    文本02：<input type="text" value="value02" disabled><br>
+    文本03：<input type="text" value="value03"><br>
+    文本04：<input type="text" value="value04" disabled><br>
+    <br>
+    <input type="checkbox" name="interest" value="reading" checked>阅读
+    <input type="checkbox" name="interest" value="food" >美食
+    <input type="checkbox" name="interest" value="travel" checked>旅游
+    <input type="checkbox" name="interest" value="music" >音乐
+    <input type="checkbox" name="interest" value="shopping" checked>购物
+    <br><br>
+    <select id="city">
+        <option value="bj" title="beijing" title="" selected>北京</option>
+        <option value="sh" title="shanghai">上海</option>
+        <option value="gz" title="guangzhou">广州</option>
+        <option value="sz" title="shenzhen">深圳</option>
+        <option value="hz" title="hangzhou">杭州</option>
+    </select>
+    <br><br>
+    <input type="button" value="选择可用文本并修改其值" onclick="fun1()">
+    <input type="button" value="选择不可用文本框并修改其值" onclick="fun2()">
+    <input type="button" value="选择复选框被选中的元素" onclick="fun3()">
+    <input type="button" value="选择下拉列表中被选中的元素" onclick="fun4()">
+
+
+
+
+</body>
+</html>

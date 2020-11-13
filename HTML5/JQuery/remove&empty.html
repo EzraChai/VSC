@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove & Empty</title>
+    <script src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+        function fun1(){
+            $("#one").remove()
+        }
+        function fun2(){
+            $("#two").empty()
+        }
+    </script>
+</head>
+<body>
+    Mahathir: <select name="one" id="one">
+        <option value="">Big Son</option>
+        <option value="">Second Son</option>
+    </select>
+    Anwar: <select name="two" id="two">
+        <option value="">Big Son</option>
+        <option value="">Second Son</option>
+    </select>
+
+    <br>
+    <input type="button" value="Mahathir get killed" onclick="fun1()">
+    <input type="button" value="Anwar no kids" onclick="fun2()">
+</body>
+</html>

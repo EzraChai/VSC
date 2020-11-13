@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1(){
+            //创建异步请求对象
+            let xmlHttp = new XMLHttpRequest()
+            //
+            xmlHttp.onreadystatechange = function(){
+
+                if(xmlHttp.readyState == 4 &&xmlHttp.status == 200){
+                    let data = xmlHttp.responseText
+                    alert("得到的数据 " + data )
+                }
+            }
+            let param = document.getElementById("dname").value()
+            xmlHttp.open("get","/myWeb/dept/check.do?dname="+param,true)
+
+            xmlHttp.send()
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+        部门编号: <input type="text" name="deptNo"><br>
+        部门名称: <input type="text" id="dname" name="dname" onblur="fun1()" ><br>
+        部门位置: <input type="text" name="loc"><br>
+        <input type="submit" value="添加部门"><br>
+    </form>
+</body>
+</html>

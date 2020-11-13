@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQueryTest</title>
+    <script src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+        window.onload = main
+        function main(){
+            $(":checkbox:first").click(fun1)
+            $(":checkbox:gt(0)").click(fun2)
+            $("table tr:gt(0)").mouseover(fun3)
+            $("table tr:gt(0)").mouseout(fun4)
+        }
+
+        function fun1(){
+            let $prop = $(":checkbox:first").prop("checked")
+
+            $(":checkbox:gt(0)").prop("checked",$prop)
+            fun5()
+        }
+
+        //Select all
+        function fun2(){
+            let cblength = $(":checkbox:gt(0)").length
+            let checkedlength = $(":checkbox:gt(0):checked").length
+
+            if(cblength == checkedlength){
+                $(":checkbox:first").prop("checked",true)
+            }else{
+                $(":checkbox:first").prop("checked",false)
+            }
+            fun5()
+        }
+
+        function fun3(){
+            $(this).css("background-color", "lightblue")
+        }
+        function fun4(){
+            $(this).css("background-color", "white")
+        }
+        function fun5(){
+            let checkedlength = $(":checkbox:gt(0):checked").length
+            if(checkedlength > 0){
+                $(":button").prop("disabled",false)
+            }else{
+                $(":button").prop("disabled",true)
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <table border="2">
+        Employee
+        <tr>
+            <td>Name</td>
+            <td>Position</td>
+            <td>Salary</td>
+            <td><input type="checkbox" onclick="fun1()" >Select All and Unselect All
+                <input type="button" value="delete " disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>Mike</td>
+            <td>Engineer</td>
+            <td>5000</td>
+            <td><input type="checkbox" >
+            </td>
+        </tr>
+        <tr>
+            <td>Alan</td>
+            <td>Programmer</td>
+            <td>10000</td>
+            <td><input type="checkbox" >
+            </td>
+        </tr>
+        <tr>
+            <td>Smith</td>
+            <td>Manager</td>
+            <td>8000</td>
+            <td><input type="checkbox" >
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

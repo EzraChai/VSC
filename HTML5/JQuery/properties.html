@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties</title>
+    <script src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+        function fun1(){
+            let option = $("#city>option:selected")
+            alert("Value = "+option.val())
+            alert("Title = "+option.attr('title'))
+            alert("文字显示内容 = " + option.text())
+            alert("Selected = "+option.prop("selected"))
+        }
+    </script>
+</head>
+<body>
+    <select id="city" onchange="fun1() ">
+        <option value="bj" title="beijing" title="" selected>北京</option>
+        <option value="sh" title="shanghai">上海</option>
+        <option value="gz" title="guangzhou">广州</option>
+        <option value="sz" title="shenzhen">深圳</option>
+        <option value="hz" title="hangzhou">杭州</option>
+    </select>
+</body>
+</html>

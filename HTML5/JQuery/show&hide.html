@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show & Hide</title>
+    <script src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+        function fun1(){
+            $("div").hide(1000)
+        }
+        function fun2(){
+            $("div").show(1000)
+        }
+
+    </script>
+    <style>
+        div{
+            width:400px ;
+            height: 400px;
+            background-color: beige;
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        我是div
+    </div>
+    <input type="button" value="Hide Div" onclick="fun1()">
+    <input type="button" value="Show Div" onclick="fun2()">
+</body>
+</html>

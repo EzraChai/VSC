@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+        function fun1(){
+            let $username = $(":text")
+            let value = $username.val()
+            alert(value)
+        }
+
+        function fun2(){
+            let $passwordValue = $(":password").val()
+            alert($passwordValue)
+        }
+        
+        function fun3(){
+            let $radio = $(":radio")
+            /*
+            for(let i = 0; i < $radio.length; i++){
+                let obj = $radio[i]
+                myFun(i,obj)
+            } 
+            */
+
+            //Better way
+            $radio.each(myFun)
+        }
+
+        function myFun(index , obj){
+            alert("Index : " + (index+1) + " Value : " + obj.value)
+        }
+
+        function fun4(){
+            let $file =  $(":file").val()
+            alert($file)
+        }
+
+        function fun5(){
+
+        }
+
+    </script>
+</head>
+<body>
+        <form action="www.google.com" method="POST">
+            Username <input type="text" name="username"><br>
+            Password <input type="password" name="password"><br>
+            Gender : <input type="radio" value="boy" id="boy">Boy <input type="radio" value="girl" id="girl">Girl <br>
+            Picture : <input type="file" name="picuture" id="pic"><br>
+            Hobby : <input type="checkbox" name="music" id="music" checked>Music  <input type="checkbox" name="travel" id="travel">Travel  <input type="checkbox" name="shop" id="shop"> Shopping
+            <br><input type="button" value="Submit" onclick="submitBtn()">
+        </form>
+        <br>
+        <br>
+        <input type="button" value="选择文本输入框并输出用户输入的值" onclick="fun1()">
+        <input type="button" value="选择密码输入框输出用户的密码" onclick="fun2()">
+        <input type="button" value="选择单选框的value属性值" onclick="fun3()">
+        <input type="button" value="选择文件上传并输出用户选择的文件" onclick="fun4()">
+        <input type="button" value="选择复选框并输出用户选择的值 ">
+</body>
+</html>

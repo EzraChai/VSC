@@ -5,15 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="JQueryFile\jquery3.5.1.js"></script>
     <script>
+        window.onload = function(){
+            $(":checkbox:gt(0)").click(fun2)
+        }
 
         function selectAll(){
             //获得第一个·Checkbox 的选中状态
             let flag = $("#selectAll").prop("checked")
 
             //为所有数据行checkbox的选中状态设置
-            $(".Hobby").prop("checked",flag)
-            
+            let $obj = $(".Hobby")   //JQuery 对象一般都以$作为开头·
+            $obj.prop("checked",flag)
 
+        }
+        function fun2(){
+            let length = $(".Hobby").length
+            let checkedLength= $(".Hobby:checked").length
+            if(length == checkedLength){
+                $("#selectAll").prop("checked",true)
+            }else{
+                $("#selectAll").prop("checked",false)
+
+            }
         }
     </script>
     <title>Document</title>

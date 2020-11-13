@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append & AppendTo</title>
+    <style>
+        #father{
+            width:200px ;
+            height: 200px;
+            background-color: beige;
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: blueviolet;
+            margin-bottom: 20px ;
+        }
+        #son{
+            width:100px ;
+            height: 100px;
+            background-color: rgb(56, 56, 0);
+            font-size: 14px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(239, 221, 255);
+            margin-bottom: 20px ;
+        }
+        .two{
+            width:200px ;
+            height: 200px;
+            background-color: rgb(247, 0, 0);
+            color: rgb(38, 0, 73);
+        }
+    </style>
+    <script src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+        function fun1(){
+            $("#father").append($("#son"))
+        }
+    function fun2(){
+        $("#son").appendTo($("#father"))
+    }
+    </script>
+</head>
+<body>
+    <div id="father">
+        我是爸爸
+    </div>
+
+    <div class="two">
+       <div id="son">
+        我是儿子
+        </div> 
+    </div>
+    
+    
+
+    <br>
+    <input type="button" value="爸爸给自己找了个儿子" onclick="fun1()">
+    <input type="button" value="儿子给自己找了个爸爸" onclick="fun2()">
+</body>
+</html>
