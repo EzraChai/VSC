@@ -8,7 +8,8 @@
         let xmlHttp = new XMLHttpRequest();
 
         xmlHttp.onreadystatechange = function(){
-
+            let text = document.getElementById("span")
+            text.innerText = "Hi"
         }
 
         xmlHttp.open("get","bmiAjax",true);
@@ -25,5 +26,6 @@
         Height(cm) : <input type="text" name="Height"><br>
         <input type="button" value="Submit" onclick="doAjax()" >
     </div>
+    <span id="span"></span>
 </body>
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Each</title>
+    <script  src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                let arr = ["Chloe" , "Gan"]
+                $.each(arr,function(index,element){
+                    alert("循环的变量" + index + " 数组成员" + element)
+                })
+            })
+
+            $("#btn2").click(function(){
+                let json = {"name": "Chloe Gan","age":15};
+                $.each(json,function(index,element){
+                    alert(" index 是key = " + index + ",element 是值 = "+ element)
+                })
+            })
+
+            $("#btn3").click(function(){
+                let domArray = $(":text")
+                $.each(domArray,function(i,n){
+                    alert("i = " + i + ", n = " + n.value)
+                })
+            })
+
+            $("#btn4").click(function(){
+                $(":text").each(function(i,n){
+                    alert("i = " + i + ", n = " + n.value)
+                })
+            })
+        })
+            
+        
+        
+
+        //function fun1(){
+        //    alert("Hi Jquery")
+        //    let arr = [1,2,3]
+        //    $.each(arr,function(index,element){
+        //        alert("循环的变量" + index + " 数组成员" + element)
+        //    })
+        //}
+    
+
+    </script>
+</head>
+<body>
+    <input type="text" value="关羽" >
+    <input type="text" value="张飞" >
+    <input type="text" value="刘备" >
+    <br><br>
+
+    <input type="button" value="循环普通数组" id="btn1" >
+    <br>
+    <input type="button" value="循环Json" id="btn2" >
+    <br>
+    <input type="button" value="循环dom数组" id="btn3" >
+    <br>
+    <input type="button" value="循环Jquery对象" id="btn4" >
+
+
+</body>
+</html>

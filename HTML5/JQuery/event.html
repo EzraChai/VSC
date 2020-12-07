@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <script  src="JQueryFile\jquery3.5.1.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("#mydiv").append("<input type='button' value='新加button' id='newbtn'>");
+                $("#newbtn").on("click",function(){
+                    alert("新建按钮被单击了")
+                })
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <div id="mydiv">
+        我是div    
+    </div>
+
+    <input type="button" value="创建button绑定一个click" id="btn1" >
+    <br>
+
+
+</body>
+</html>
